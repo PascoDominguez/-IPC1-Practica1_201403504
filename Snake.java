@@ -3,7 +3,7 @@ package snake;
 import java.util.Scanner;
 
 public class Snake {
-    
+
     public static void main(String[] args) {
         InicioJuego ij = new InicioJuego();
         Scanner sc = new Scanner(System.in);
@@ -11,28 +11,34 @@ public class Snake {
         s.menu();
         int numero = sc.nextInt();
         int seleccionar = numero;
-        while (seleccionar<1000) {
+        char salir = 'n';
+        while (salir < 1000) {
             switch (seleccionar) {
                 case 1:
                     ij.InicioJuego();
+                    ij.moverse();
+                            
                     break;
                 case 2:
                     DatosEstudiante de = new DatosEstudiante();
                     de.misDatos();
                     break;
                 case 3:
+                        
                     ij.historial();
                     break;
                 case 4:
                     System.exit(0);
                     break;
-            }    
+            }
             System.out.println("");
             System.out.println("**********************************************");
             System.out.println("MENU");
             s.menu();
+                    
             seleccionar = sc.nextInt();
         }
+
     }
 
     public void menu() {
@@ -44,6 +50,10 @@ public class Snake {
         System.out.println("+ 3.  Historial de Partidas Jugadas              +");
         System.out.println("+ 4.  Salir                                      +");
         System.out.println("+================================================+");
+        
     }
+    
+   
+    
 
 }
